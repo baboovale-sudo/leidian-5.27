@@ -14,7 +14,7 @@ namespace OLA
         public string EmulatorName { get; set; }
         public string EmulatorClass { get; set; }
         public string EmulatorBasePath { get; set; }
-        public string PackageName { get; set; } = "com.xy.sh.wjsy5774";
+        public string PackageName { get; set; } = "com.syyx.nuoya.idle";
         public List<string> TaskList { get; set; } = new List<string>();
         public WorkerState RunState { get; private set; } = WorkerState.Idle;
         public DateTime LastStartTime { get; private set; }
