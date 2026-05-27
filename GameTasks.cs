@@ -141,6 +141,10 @@ namespace OLA
                 if (await _worker.OL_CmpColor("424,403,62e303|424,436,6cf903|466,459,f7b164|775,511,b92e2c|905,520,edefef", 910, 519, 500)) continue;
                 if (await _worker.OL_CmpColor("819,13,ede7db|827,476,efefef|790,480,f1f3f3|824,437,dbdbdb", 807, 478, 500)) continue;
                 if (await _worker.OL_MatchWindowsFromPath(557, 166, 669, 204, "新手启程礼.bmp", 575, 359, 500)) continue;
+                // 找到“关闭.bmp”后，点击指定坐标 920,35
+                if (await _worker.OL_FindWindowsFromPath( 557, 166, 669, 204, "新手启程礼.bmp", 575, 359, 500)) {
+                    continue;
+                }
                 if (await _worker.OL_MatchWindowsFromPath(0, 0, 960, 540, "立即启动.bmp", 478, 395, 3000)) continue;
                 if (await _worker.OL_MatchWindowsFromPath(445, 476, 516, 498, "开始游戏.bmp", 481, 485, 3000)) continue;
                 if (await _worker.OL_CmpColor("41,115,bd972c|41,113,bd972c|41,110,bf972c", 100, 111, 2000)) continue;
@@ -163,7 +167,7 @@ namespace OLA
 
                 if ((DateTime.Now - _worker.LastActionTime).TotalMinutes >= 3)
                 {
-                    MarkTaskFailed("⏳ 三分钟没识别到任务，防卡死触发");
+                    MarkTaskFailed(" 三分钟没识别到任务，防卡死触发");
                     return;
                 }
 
